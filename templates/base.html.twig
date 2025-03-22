@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}GoRest App
+			{% endblock %}
+		</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<h1>GoRest App</h1>
+		</header>
+
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+
+		<footer>
+			<p>&copy;
+				{{ "now"|date("Y") }}</p>
+		</footer>
+
+		{% block javascripts %}
+			<script src="{{ asset('js/app.js') }}"></script>
+		{% endblock %}
+
+	</body>
+</html>

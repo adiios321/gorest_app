@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista użytkowników
+{% endblock %}
+
+{% block body %}
+	<form id="search-form">
+		<input type="text" name="q" id="search-input" placeholder="Szukaj..." value="{{ query }}">
+		<button type="submit">Szukaj</button>
+	</form>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Imię</th>
+				<th>Email</th>
+				<th>Akcje</th>
+			</tr>
+		</thead>
+		<tbody id="user-list">
+			{% for user in users %}
+				<tr data-id="{{ user.id }}">
+					<td>{{ user.id }}</td>
+					<td><input class="edit-name" value="{{ user.name }}"></td>
+					<td><input class="edit-email" value="{{ user.email }}"></td>
+					<td>
+						<button class="save-user">Zapisz</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
